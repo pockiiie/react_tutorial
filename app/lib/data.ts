@@ -15,7 +15,6 @@ export async function fetchRevenue() {
     // Don't do this in production :)
 
     // console.log('Fetching revenue data...');
-    await new Promise((resolve) => setTimeout(resolve, 3000));
 
     const data = await sql<Revenue>`SELECT * FROM revenue`;
 
@@ -30,7 +29,6 @@ export async function fetchRevenue() {
 
 export async function fetchLatestInvoices() {
   try {
-    await new Promise((resolve) => setTimeout(resolve, 2000));
 
     const data = await sql<LatestInvoiceRaw>`
       SELECT invoices.amount, customers.name, customers.image_url, customers.email, invoices.id
@@ -52,7 +50,6 @@ export async function fetchLatestInvoices() {
 
 export async function fetchCardData() {
 
-  await new Promise((resolve) => setTimeout(resolve, 4000));
 
   try {
     // You can probably combine these into a single SQL query
